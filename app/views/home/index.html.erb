@@ -12,3 +12,12 @@
     </div>
 <% end %>
 </div>
+<div>
+
+    <h2>INDEX</h2>
+    <%= if user_signed_in? 
+            link_to 'Panier validé', panier_path
+        end 
+    %>
+
+</div>
