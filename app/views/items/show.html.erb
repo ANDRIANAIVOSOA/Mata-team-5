@@ -1,0 +1,12 @@
+<div id="product" style="background-color: grey;">
+    <h2><%= @item.title %></h2>
+    <div><%= @item.description %></div>
+    <div><%= @item.image_url %></div>
+    <div>
+        <%= @item.price %>
+
+            <%= link_to "Edit", edit_item_path(@item) %>
+
+        <%= link_to "Back to Home", root_path %>
+    </div>
+</div>
