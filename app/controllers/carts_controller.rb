@@ -17,6 +17,13 @@ class CartsController < ApplicationController
     
   end
 
+  def add
+    if user_signed_in? 
+      puts current_user.cart_id
+    end
+    redirect_to home_path
+  end
+
   def show
   end
 end

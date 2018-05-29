@@ -15,6 +15,7 @@
                 <td><%= item.description %> </td>
                 <td><%= item.price %> </td>
                 <td><%= item.image_url %> </td>
+                 <td><%= link_to 'add to paner', add_path(item.id) %> 
             </tr>
             <% end %>   
         
