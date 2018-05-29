@@ -1,0 +1,3 @@
+Publishable key STRIPE:
+pk_test_aR4EscDbqFEdb4gs9Hzun8yN
+
