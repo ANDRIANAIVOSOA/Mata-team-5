@@ -19,9 +19,15 @@
             <% if user_signed_in? %>
                 <li class="nav-item">
                     <span>
-                        <%= current_user.email %>
+                        <%= current_user.id %>
+                       
                     </span>
                 </li>
+                <li class="nav-item">
+                    <span>
+                    <%= link_to "creer votre panier", new_cart_path %>
+                    </span>
+                </li>    
             <% end %>
         </ul>
         <div class="navbar">
