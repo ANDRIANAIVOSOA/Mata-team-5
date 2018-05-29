@@ -1,0 +1,17 @@
+<%
+    @vignette = "saka_"
+    @compteur = 1
+%>
+
+<% @chats.each do |chat| %>
+    <div id="product" style="background-color: grey;">
+        <h2><%= chat.title %></h2>
+        <div><%= image_tag(@vignette + @compteur + ".jpg") %><%= chat.description %></div>
+        <div><%= chat.image_url %></div>
+        <div>
+            <%= chat.price %>
+            <%= link_to "show", item_path(chat.id) %> 
+            <button>Ajouter au panier</button>
+        </div>
+    </div>
+<% end %>

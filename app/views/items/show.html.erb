@@ -4,6 +4,9 @@
     <div><%= @item.image_url %></div>
     <div>
         <%= @item.price %>
+
+            <%= link_to "Edit", edit_item_path(@item) %>
+
         <%= link_to "Back to Home", root_path %>
     </div>
 </div>
