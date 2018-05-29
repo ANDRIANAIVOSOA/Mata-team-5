@@ -1,0 +1,44 @@
+<!-- NAVBAR -->
+<div class="" id="navbarSupportedContent">
+        <ul class="navbar">
+            <li class="nav-item">
+                <a class="nav-link link text-danger display-5" href="#">
+                    <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link text-danger display-5" href="#">
+                    <span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>
+                    Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link text-danger display-5" href="#">
+
+                    About Us
+                </a>
+            </li>
+            <% if user_signed_in? %>
+                <li class="nav-item">
+                    <span>
+                        <%= current_user.email %>
+                    </span>
+                </li>
+            <% end %>
+        </ul>
+        <div class="navbar">
+            <% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn" %>
+            <% else %>
+                <a class="btn" href="<%= new_user_session_path %>"> Sign In</a>
+            <% end %>
+        </div>
+</div>
+
+    <!-- ALERTE ET NOTIFICATION -->
+    <div class="container">
+        <p class="notice">
+            <%= notice %>
+        </p>
+        <p class="alert">
+            <%= alert %>
+        </p>
+    </div>
