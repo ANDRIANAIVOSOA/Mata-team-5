@@ -1,8 +1,12 @@
-<div class="container">
+<%
+    @vignette = "saka_"
+    @compteur = 1
+%>
+
 <% @chats.each do |chat| %>
     <div id="product" style="background-color: grey;">
         <h2><%= chat.title %></h2>
-        <div><%= image_tag(chat.image_url, width: '50px', height: '50px') %><%= chat.description %></div>
+        <div><%= image_tag(@vignette + @compteur + ".jpg") %><%= chat.description %></div>
         <div><%= chat.image_url %></div>
         <div>
             <%= chat.price %>
@@ -11,4 +15,3 @@
         </div>
     </div>
 <% end %>
-</div>
