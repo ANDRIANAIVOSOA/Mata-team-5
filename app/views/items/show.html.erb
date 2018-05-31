@@ -1,12 +1,65 @@
-<div id="product" style="background-color: grey;">
-    <h2><%= @item.title %></h2>
-    <div><%= @item.description %></div>
-    <div><%= @item.image_url %></div>
-    <div>
-        <%= @item.price %>
+<div class="container bgwhite p-t-35 p-b-80">
+	<div class="flex-w flex-sb">
+		<div class="w-size13 p-t-30 respon5">
+			<div class="wrap-slick3 flex-sb flex-w">
+				<%= image_tag(@item.image_url, class: "show-img-max") %>
+			</div>
+		</div>
 
-            <%= link_to "Edit", edit_item_path(@item) %>
+		<div class="w-size14 p-t-30 respon5">
+			<h4 class="product-detail-name m-text16 p-b-13">
+				<%= @item.title %>
+			</h4>
 
-        <%= link_to "Back to Home", root_path %>
-    </div>
+			<span class="m-text17">
+				<%= @item.price %> €
+			</span>
+
+			<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+				<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+					Description
+					<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+					<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+				</h5>
+
+				<div class="dropdown-content dis-none p-t-15 p-b-23">
+					<p class="s-text8">
+						<%= @item.description %>
+					</p>
+				</div>
+			</div>
+
+			<!--  -->
+			<div class="p-t-33 p-b-60">
+				<div class="flex-w p-t-10">
+					<div class="w-size16 flex-m flex-w">
+						<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10 btn-addcart-for-margin">
+							<!-- Button -->
+							<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+								Add to Cart
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<%= form_tag items_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Amount: $5.00</span>
+      </label>
+    </article>
+  
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="500"
+            data-locale="auto"></script>
+  <% end %>

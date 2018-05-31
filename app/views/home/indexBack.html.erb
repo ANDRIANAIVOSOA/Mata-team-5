@@ -1,0 +1,41 @@
+<div class="container">
+    <span>*******************************</span>
+    <% @chats.each do |chat| %>
+        <div id="product" style="background-color: grey;">
+            <h2>
+                <%= chat.title %>
+            </h2>
+            <div>
+                <%= image_tag(chat.image_url, width: '50px', height: '50px') %>
+                    <%= chat.description %>
+            </div>
+            <div>
+                <%= chat.image_url %>
+            </div>
+            <div>
+                <%= chat.price %>
+                    <%= link_to "show", item_path(chat.id) %>
+                    <%= link_to "Ajouter à mon panier", cart_create_path(chat.id) %>
+            </div>
+        </div>
+        <% end %>
+
+</div>
+<div>
+    <span>*******************************</span>
+</div>
+<div>
+
+    <h2>MAILER</h2>
+    <%= if user_signed_in? 
+            link_to 'envoyer mail (lié au validation command)', panier_path
+        end 
+    %>
+</div>
+<div>
+    <span>*******************************</span>
+</div>
+<div>
+        <%= link_to 'voir mon panier', cart_path %>
+</div>
+    

@@ -1,0 +1,37 @@
+<div>
+    <h2>IMAGES AU PANIER</h2>
+    <%  @nb = 0 
+        @somme = 0
+    %>
+    <% @items.each do |item|  
+        @nb +=1
+        @somme += item.price %>
+        
+        <div id="product" style="background-color: grey;">
+            <h2>
+                <%= item.title %>
+            </h2>
+            <div>
+                <%= image_tag(item.image_url, width: '50px', height: '50px') %>
+                    <%= item.description %>
+            </div>
+            <div>
+                <%= item.image_url %>
+            </div>
+            <div>
+                <%= item.price %>
+                    <%= link_to "show", item_path(item.id) %>
+                    <%= link_to "Supprimer du panier", cart_create_path(item.id) %>
+            </div>
+        </div>
+        <% end %>
+        <div>
+            <span>Tu as : <%= @nb %> Items au paniers</span>
+            <span>Tu dois payer <%= @somme %> €</span>
+            <span><%= link_to 'Delete', delete_cart_path(current_user.id), 
+                        method: :delete, 
+                        data: { confirm: 'Are you sure?' } 
+                    %> 
+            </span>
+        </div>
+</div>

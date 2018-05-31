@@ -80,11 +80,21 @@ class CartController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find_by(user_id: current_user.id)
-    a=AssociateItemCart.find_by(cart_id: @cart.id)
-    a.destroy
-    @cart.destroy
-    redirect_to root_path
+    if user_signed_in?
+
+      ContactMailer.contact(current_user, Item.first).deliver_now
+        
+      cart = Cart.find_by(user_id: current_user.id)
+      a=AssociateItemCart.find_by(cart_id: cart.id)
+      
+        a.delete
+      
+      
+      redirect_to cart_path
+    else
+      redirect_to root_path
+
+    end
 
   end
 end
