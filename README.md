@@ -1,7 +1,7 @@
 # Mata-team-5
 Cette semaine la team à créer un site e-commerce, histoire de nous mettre dans le bain pour le projet final, travail de groupe et méthodoligie pour ne pas perdre le nord.
 
-# Miaou The process!
+# Miaou The process! :cat:
 Comme prévu dans ce site un visiteur peut acheter en étant connecté, consulter la fiche produit et acheter puisqu'on a intégrer stripe !
 De même un mail sera envoyer à l'administrateur dès qu'il y a une commande.
 Le principe d'un site MVP, on a établit les fonctionnalités techniques en suivant le tableau dans stripe
