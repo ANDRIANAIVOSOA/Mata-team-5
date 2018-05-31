@@ -28,8 +28,7 @@
         <div>
             <span>Tu as : <%= @nb %> Items au paniers</span>
             <span>Tu dois payer <%= @somme %> €</span>
-            <span><%= link_to 'Delete', 
-                        cart_path(@cart.id), 
+            <span><%= link_to 'Delete', delete_cart_path(current_user.id), 
                         method: :delete, 
                         data: { confirm: 'Are you sure?' } 
                     %> 

@@ -23,12 +23,7 @@ class CartController < ApplicationController
     		#redirect_to cart_path
       end
       
-      def destroy
-        @cart = Cart.find_by(id: current_user.id)
-        @cart.destroy
-        redirect_to root_path
-
-      end
+      
   	else
   		redirect_to(user_session_path)
   	end
@@ -83,4 +78,14 @@ class CartController < ApplicationController
   		redirect_to user_session_path
     end
   end
+
+  def destroy
+    @cart = Cart.find_by(user_id: current_user.id)
+    a=AssociateItemCart.find_by(cart_id: @cart.id)
+    a.destroy
+    @cart.destroy
+    redirect_to root_path
+
+  end
 end
+
