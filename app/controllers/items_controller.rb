@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
 
   def create
     @price = params['price'].to_d
-    puts @price
+    #puts @price
     @item = Item.new(title: params['title'], description: params['description'], price: @price, image_url: params['image_url'])
     if @item.save
       redirect_to item_path(@item.id)
