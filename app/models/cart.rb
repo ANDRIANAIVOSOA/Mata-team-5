@@ -1,6 +1,4 @@
 class Cart < ApplicationRecord
-
-    has_and_belongs_to_many :items
-    has_one :users, class_name: 'User'
-
+    has_many :associate_item_cart 
+    has_many :item, through: :associate_item_carts
 end

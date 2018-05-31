@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'carts/new'
-  post 'carts/create'
-  get 'carts/show'
+
+  get 'order/create'
+  get 'cart/create'
   get 'carts/add/:id', to: 'carts#add', as: 'add'
   devise_for :users
   resources :items
