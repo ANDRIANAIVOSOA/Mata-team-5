@@ -10,7 +10,10 @@ Le principe d'un site MVP, on a établit les fonctionnalités techniques en suiv
 [Boutique](https://gentle-waters-46878.herokuapp.com/)
 
 # La correction
+
+
 Vous devrez tester en local, il vous faudrat créer un fichier .env et y mettre la clé api stripe, puisqu'on a un petit bug sur heroku
+Créer une utilisateur qui a un email : "test@sayna.com" => pour l'admin du site 
 
 # Slack: @Fenitra @Fetra @Hari @Andry @Ando
 C'est sûr, le projet n'est pas parfait mais on a fait de notre mieux :smile:
