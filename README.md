@@ -6,8 +6,11 @@ Comme prévu dans ce site un visiteur peut acheter en étant connecté, consulte
 De même un mail sera envoyer à l'administrateur dès qu'il y a une commande.
 Le principe d'un site MVP, on a établit les fonctionnalités techniques en suivant le tableau dans stripe
 
+# Lien heroku
+[Boutique](https://gentle-waters-46878.herokuapp.com/)
+
 # La correction
-Puisqu'on a pas de lien en production, donc chers correcteurs vous devrez tester en local, il vous faudrat créer un fichier .env et y mettre la clé api stripe.
+Vous devrez tester en local, il vous faudrat créer un fichier .env et y mettre la clé api stripe, puisqu'on a un petit bug sur heroku
 
 # Slack: @Fenitra @Fetra @Hari @Andry @Ando
 C'est sûr, le projet n'est pas parfait mais on a fait de notre mieux :smile:
