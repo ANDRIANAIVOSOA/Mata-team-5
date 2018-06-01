@@ -12,7 +12,8 @@ Le principe d'un site MVP, on a établit les fonctionnalités techniques en suiv
 # La correction
 
 
-Vous devrez tester en local, il vous faudrat créer un fichier .env et y mettre la clé api stripe, puisqu'on a un petit bug sur heroku
+Vous devrez tester en local, puisqu'on a un petit bug sur heroku
+
 Créer une utilisateur qui a un email : "test@sayna.com" => pour l'admin du site 
 
 # Slack: @Fenitra @Fetra @Hari @Andry @Ando
