@@ -1,11 +1,5 @@
 class HomeController < ApplicationController
   
-  def mailer
-    if user_signed_in?
-      ContactMailer.contact(current_user, Item.first).deliver_now
-      redirect_to root_path
-    end
-  end
 
   def index
     @chats = Item.all
@@ -36,7 +30,8 @@ class HomeController < ApplicationController
   			@items.push(Item.find(a.item_id))
   		end
     end
-  end
+	end
+
 
   
 end

@@ -91,13 +91,15 @@
               <li>
                 <a href="/">Accueil</a>
               </li>
+              <%= if user_signed_in? 
+                    if current_user.email=='test@sayna.com'
+                      render partial: 'layouts/ajouter'
+                    end
+                  end
+              %>
 
               <li>
-                <a href="about.html">A propos de nous</a>
-              </li>
-
-              <li>
-                <a href="contact.html">Nous contacter</a>
+                <a href="#">Nous contacter</a>
               </li>
             </ul>
           </nav>

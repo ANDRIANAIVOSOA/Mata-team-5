@@ -35,9 +35,11 @@
 					<div class="w-size16 flex-m flex-w">
 						<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10 btn-addcart-for-margin">
 							<!-- Button -->
-							<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+							<%= link_to "Ajouter", cart_create_path(@item.id), class: "flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" %>
+							<%= link_to "Editer", edit_item_path(@item.id), class: "flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" %>
+							<!-- button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 								Add to Cart
-							</button>
+							</button -->
 						</div>
 					</div>
 				</div>
@@ -45,21 +47,3 @@
 		</div>
 	</div>
 </div>
-<%= form_tag items_path do %>
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-      </label>
-    </article>
-  
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="A month's subscription"
-            data-amount="500"
-            data-locale="auto"></script>
-  <% end %>
