@@ -80,25 +80,29 @@ class CartController < ApplicationController
     end
   end
 
+  def striper
+    #stripe
+      
+    @amount = 500
+
+    customer = Stripe::Customer.create(
+      :email => params[:stripeEmail],
+      :source  => params[:stripeToken]
+    )
+  
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'eur'
+    )
+  
+  end
+
   def destroy
     if user_signed_in?
 
-      #stripe
       
-      @amount = 500
-
-      customer = Stripe::Customer.create(
-        :email => params[:stripeEmail],
-        :source  => params[:stripeToken]
-      )
-    
-      charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount      => @amount,
-        :description => 'Rails Stripe customer',
-        :currency    => 'eur'
-      )
-    
        # envoie mail
        ContactMailer.contact(current_user, Item.first).deliver_now
         
@@ -109,9 +113,6 @@ class CartController < ApplicationController
            ass.delete
          end
        end
-
-      rescue Stripe::CardError => e
-        flash[:error] = e.message
 
         redirect_to root_path#payer_path
     else

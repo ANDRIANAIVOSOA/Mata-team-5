@@ -36,7 +36,12 @@
 						<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10 btn-addcart-for-margin">
 							<!-- Button -->
 							<%= link_to "Ajouter", cart_create_path(@item.id), class: "flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" %>
-							<%= link_to "Editer", edit_item_path(@item.id), class: "flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" %>
+							
+							<%= if user_signed_in?
+								if current_user.email == "test@sayna.com"
+									link_to "Editer", edit_item_path(@item.id), class: "flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4"
+								end
+							end %> 
 							<!-- button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 								Add to Cart
 							</button -->
